@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Másodfokú Egyenletek Magyarázata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f7fc;
+            color: #4b2e83;
+        }
+
+        header {
+            background: #6a4c9c;
+            color: #fff;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 4px solid #fff;
+        }
+
+        main {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .card:nth-child(even) {
+                background: #e6d9ff;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            }
+
+        h2 {
+            color: #6a4c9c;
+            font-size: 1.8rem;
+        }
+
+        .interactive {
+            background: #ede7f6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e1bee7;
+        }
+
+            .interactive label, .interactive input {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .interactive input {
+                width: 80px;
+                padding: 0.5rem;
+                border: 1px solid #b39ddb;
+                border-radius: 5px;
+            }
+
+        .result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #d1c4e9;
+            border: 1px solid #b39ddb;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #4b2e83;
+            color: #fff;
+        }
+        .interactive button {
+            background: #6a4c9c;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+            .interactive button:hover {
+                background: #4b2e83;
+            }
+
+        .image-section {
+            text-align: center;
+        }
+
+            .image-section img {
+                max-width: 90%;
+                margin: 1rem 0;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+        }
+
+        .abc-card {
+            background: #f3e5f5;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .abc-card p {
+                font-size: 1.2rem;
+            }
+
+        .usage-card {
+            background: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Másodfokú Egyenletek Magyarázata</h1>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>Mi az a másodfokú egyenlet?</h2>
+            <p>A másodfokú egyenlet általános alakja:</p>
+            <p><strong>ax<sup>2</sup> + bx + c = 0</strong></p>
+            <div class="example">
+                <img src=".png" alt="Másodfokú egyenlet példája">
+                <p>Ebben az a, b és c együtthatók meghatározzák az egyenlet formáját és gyökeit.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>A másodfokú egyenlet megoldóképlete</h2>
+            <p>A másodfokú egyenlet megoldásához az alábbi képletet használjuk:</p>
+            <div class="image-section">
+                <img src="kep2.png" alt="Megoldóképlet">
+            </div>
+            <p>A képlet elemei:</p>
+            <ul>
+                <li><strong>-b:</strong> Az ellentett együttható</li>
+                <li><strong>&plusmn;:</strong> Két lehetséges megoldás (pozitív és negatív ág)</li>
+                <li><strong>&radic;(b<sup>2</sup> - 4ac):</strong> A diszkrimináns gyöke</li>
+                <li><strong>2a:</strong> Az osztó (kettős szorzó)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Diszkrimináns kiszámítása</h2>
+            <p>A diszkrimináns képlete:</p>
+            <p><strong>&Delta; = b<sup>2</sup> - 4ac</strong></p>
+            <p>A diszkrimináns megmondja, hogy hány valós gyöke van az egyenletnek:</p>
+            <ul>
+                <li><strong>&Delta; > 0:</strong> Két különböző valós gyök</li>
+                <li><strong>&Delta; = 0:</strong> Egy valós gyök (kettős gyök)</li>
+                <li><strong>&Delta; < 0:</strong> Nincs valós gyök</li>
+            </ul>
+            <div class="image-section">
+                <img src="kep3.png" alt="Diszkrimináns magyarázata">
+            </div>
+        </div>
+
+        <div class="card interactive">
+            <h2>Próbáld ki!</h2>
+            <p>Add meg az egyenlet együtthatóit, és nézd meg a megoldást:</p>
+            <form id="quadratic-form">
+                <label>a: <input type="number" id="a" required></label>
+                <label>b: <input type="number" id="b" required></label>
+                <label>c: <input type="number" id="c" required></label>
+                <button type="button" onclick="solveEquation()">Számítás</button>
+            </form>
+            <div id="result" class="result" style="display: none;"></div>
+        </div>
+
+        <div class="card">
+            <h2>Feladatok</h2>
+            <p>Oldd meg a következő egyenleteket:</p>
+            <ol>
+                <li><strong>x<sup>2</sup> - 5x + 6 = 0</strong></li>
+                <li><strong>2x<sup>2</sup> - 4x - 6 = 0</strong></li>
+                <li><strong>x<sup>2</sup> + 4x + 5 = 0</strong></li>
+            </ol>
+            <div class="image-section">
+                <img src="kep4.png" alt="Parabolák típusai">
+            </div>
+        </div>
+        <div class="card usage-card">
+            <h2>Hol használjuk a másodfokú egyenleteket?</h2>
+            <p>A másodfokú egyenletek alkalmazása széleskörű: megtalálhatók a fizikában, a mérnöki tudományokban, a közgazdaságtanban, és akár a biológiai modellekben is.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Készítették: <strong>Tóth Leila Anasztázia és Szűcs Dominika</strong></p>
+    </footer>
+
+    <script>
+        function solveEquation() {
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+            const c = parseFloat(document.getElementById('c').value);
+
+            const discriminant = b * b - 4 * a * c;
+            const resultDiv = document.getElementById('result');
+
+            if (discriminant > 0) {
+                const x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                const x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                resultDiv.innerHTML = `<p>Két különböző valós gyök: x<sub>1</sub> = ${x1.toFixed(2)}, x<sub>2</sub> = ${x2.toFixed(2)}</p>`;
+            } else if (discriminant === 0) {
+                const x = -b / (2 * a);
+                resultDiv.innerHTML = `<p>Egy valós gyök: x = ${x.toFixed(2)}</p>`;
+            } else {
+                resultDiv.innerHTML = '<p>Nincs valós gyök (komplex gyökök).</p>';
+            }
+
+            resultDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
