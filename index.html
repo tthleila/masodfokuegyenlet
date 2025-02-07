@@ -28,6 +28,7 @@
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
         }
+
         .card {
             background: #fff;
             border-radius: 12px;
@@ -83,6 +84,7 @@
             background: #4b2e83;
             color: #fff;
         }
+
         .interactive button {
             background: #6a4c9c;
             color: white;
@@ -144,7 +146,6 @@
             <p>A másodfokú egyenlet általános alakja:</p>
             <p><strong>ax<sup>2</sup> + bx + c = 0</strong></p>
             <div class="example">
-                <img src=".png" alt="Másodfokú egyenlet példája">
                 <p>Ebben az a, b és c együtthatók meghatározzák az egyenlet formáját és gyökeit.</p>
             </div>
         </div>
@@ -178,7 +179,19 @@
                 <img src="kep3.png" alt="Diszkrimináns magyarázata">
             </div>
         </div>
-
+        <div class="card">
+            <h2>Parabola típusok</h2>
+            <p>A másodfokú egyenletek megoldásakor különböző parabola típusokkal találkozhatunk, attól függően, hogy milyen az egyenlet diszkriminánsa (Δ):</p>
+            <ul>
+                <li><strong>Felnyíló parabola:</strong> Ha a > 0, akkor a parabola felfelé nyílik.</li>
+                <li><strong>Leenyíló parabola:</strong> Ha a < 0, akkor a parabola lefelé nyílik.</li>
+                <li><strong>Elméleti parabola:</strong> Ha Δ = 0, a parabola csúcsánál találkoznak a gyökök (kettős gyök). Ez a parabola érinti a tengelyt.</li>
+                <li><strong>Komplex parabola:</strong> Ha Δ < 0, a parabola nem metszi a tengelyt, így nincs valós gyöke.</li>
+            </ul>
+            <div class="image-section">
+                <img src="kep4.png" alt="Parabola típusok">
+            </div>
+        </div>
         <div class="card interactive">
             <h2>Próbáld ki!</h2>
             <p>Add meg az egyenlet együtthatóit, és nézd meg a megoldást:</p>
@@ -199,11 +212,9 @@
                 <li><strong>2x<sup>2</sup> - 4x - 6 = 0</strong></li>
                 <li><strong>x<sup>2</sup> + 4x + 5 = 0</strong></li>
             </ol>
-            <div class="image-section">
-                <img src="kep4.png" alt="Parabolák típusai">
-            </div>
+
         </div>
-        <div class="card usage-card">
+        <div class="card">
             <h2>Hol használjuk a másodfokú egyenleteket?</h2>
             <p>A másodfokú egyenletek alkalmazása széleskörű: megtalálhatók a fizikában, a mérnöki tudományokban, a közgazdaságtanban, és akár a biológiai modellekben is.</p>
         </div>
@@ -237,4 +248,4 @@
         }
     </script>
 </body>
-</html>
+</html>﻿
