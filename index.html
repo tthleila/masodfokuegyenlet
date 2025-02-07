@@ -1,8 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Másodfokú Egyenletek Magyarázata</title>
     <style>
         body {
@@ -132,12 +134,23 @@
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        .hover-effect:hover {
+    background-color: #e6d9ff !important;
+}
+
     </style>
 </head>
 <body>
 
     <header>
         <h1>Másodfokú Egyenletek Magyarázata</h1>
+        <button class="w3-button w3-white w3-round-xlarge ">Mi az?</button>
+        <button class="w3-button w3-white w3-round-xlarge ">A  megoldóképlete</button>
+        <button class="w3-button w3-white w3-round-xlarge ">Diszkrimináns kiszámítása</button>
+        <button class="w3-button w3-white w3-round-xlarge ">Parabola típusok</button>
+        <button class="w3-button w3-white w3-round-xlarge ">Próbáld ki</button>
+        <button class="w3-button w3-white w3-round-xlarge">Feladatok</button>
+        <button class="w3-button w3-white w3-round-xlarge ">Hol használjuk</button>
     </header>
 
     <main>
@@ -168,12 +181,12 @@
         <div class="card">
             <h2>Diszkrimináns kiszámítása</h2>
             <p>A diszkrimináns képlete:</p>
-            <p><strong>&Delta; = b<sup>2</sup> - 4ac</strong></p>
+            <p><strong>D = b<sup>2</sup> - 4ac</strong></p>
             <p>A diszkrimináns megmondja, hogy hány valós gyöke van az egyenletnek:</p>
             <ul>
-                <li><strong>&Delta; > 0:</strong> Két különböző valós gyök</li>
-                <li><strong>&Delta; = 0:</strong> Egy valós gyök (kettős gyök)</li>
-                <li><strong>&Delta; < 0:</strong> Nincs valós gyök</li>
+                <li><strong>D > 0:</strong> Két különböző valós gyök</li>
+                <li><strong>D = 0:</strong> Egy valós gyök (kettős gyök)</li>
+                <li><strong>D < 0:</strong> Nincs valós gyök</li>
             </ul>
             <div class="image-section">
                 <img src="kep3.png" alt="Diszkrimináns magyarázata">
@@ -181,12 +194,12 @@
         </div>
         <div class="card">
             <h2>Parabola típusok</h2>
-            <p>A másodfokú egyenletek megoldásakor különböző parabola típusokkal találkozhatunk, attól függően, hogy milyen az egyenlet diszkriminánsa (Δ):</p>
+            <p>A másodfokú egyenletek megoldásakor különböző parabola típusokkal találkozhatunk, attól függően, hogy milyen az egyenlet diszkriminánsa (D):</p>
             <ul>
-                <li><strong>Felnyíló parabola:</strong> Ha a > 0, akkor a parabola felfelé nyílik.</li>
-                <li><strong>Leenyíló parabola:</strong> Ha a < 0, akkor a parabola lefelé nyílik.</li>
-                <li><strong>Elméleti parabola:</strong> Ha Δ = 0, a parabola csúcsánál találkoznak a gyökök (kettős gyök). Ez a parabola érinti a tengelyt.</li>
-                <li><strong>Komplex parabola:</strong> Ha Δ < 0, a parabola nem metszi a tengelyt, így nincs valós gyöke.</li>
+                <li><strong>Felnyíló parabola:</strong> Ha D > 0, akkor a parabola felfelé nyílik.</li>
+                <li><strong>Leenyíló parabola:</strong> Ha D < 0, akkor a parabola lefelé nyílik.</li>
+                <li><strong>Elméleti parabola:</strong> Ha D = 0, a parabola csúcsánál találkoznak a gyökök (kettős gyök). Ez a parabola érinti a tengelyt.</li>
+                <li><strong>Komplex parabola:</strong> Ha D < 0, a parabola nem metszi a tengelyt, így nincs valós gyöke.</li>
             </ul>
             <div class="image-section">
                 <img src="kep4.png" alt="Parabola típusok">
@@ -219,12 +232,26 @@
             <p>A másodfokú egyenletek alkalmazása széleskörű: megtalálhatók a fizikában, a mérnöki tudományokban, a közgazdaságtanban, és akár a biológiai modellekben is.</p>
         </div>
     </main>
-
     <footer>
-        <p>Készítették: <strong>Tóth Leila Anasztázia és Szűcs Dominika</strong></p>
+        <p>
+            Készítették:
+            <strong>
+                <a href="https://tthleila.github.io/munkaim/" target="_blank">Tóth Leila Anasztázia</a>
+                és
+                <a href="https://szucsdominika.hu" target="_blank">Szűcs Dominika</a>
+            </strong>
+        </p>
     </footer>
 
     <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll("header button");
+
+    buttons.forEach(button => {
+        button.classList.add("hover-effect");
+    });
+});
+
         function solveEquation() {
             const a = parseFloat(document.getElementById('a').value);
             const b = parseFloat(document.getElementById('b').value);
@@ -245,7 +272,8 @@
             }
 
             resultDiv.style.display = 'block';
-        }
+            }
+
     </script>
 </body>
-</html>﻿
+</html>
