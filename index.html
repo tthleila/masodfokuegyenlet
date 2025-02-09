@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
@@ -134,9 +133,26 @@
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .hover-effect:hover {
-    background-color: #e6d9ff !important;
-}
+            background-color: #e6d9ff;
+        }
+        li[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            background-color: #4b2e83;
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 1rem;
+            white-space: nowrap;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            margin-top: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
 
     </style>
 </head>
@@ -221,12 +237,12 @@
             <h2>Feladatok</h2>
             <p>Oldd meg a következő egyenleteket:</p>
             <ol>
-                <li><strong>x<sup>2</sup> - 5x + 6 = 0</strong></li>
-                <li><strong>2x<sup>2</sup> - 4x - 6 = 0</strong></li>
-                <li><strong>x<sup>2</sup> + 4x + 5 = 0</strong></li>
+                <li title="Két különböző valós gyök: x₁ = 2, x₂ = 3"><strong>x<sup>2</sup> - 5x + 6 = 0</strong></li>
+                <li title="Két különböző valós gyök: x₁ = 3, x₂ = -2"><strong>2x<sup>2</sup> - 4x - 6 = 0</strong></li>
+                <li title="Egy valós gyök: x = -2"><strong>x<sup>2</sup> + 4x + 5 = 0</strong></li>
             </ol>
-
         </div>
+
         <div class="card">
             <h2>Hol használjuk a másodfokú egyenleteket?</h2>
             <p>A másodfokú egyenletek alkalmazása széleskörű: megtalálhatók a fizikában, a mérnöki tudományokban, a közgazdaságtanban, és akár a biológiai modellekben is.</p>
@@ -238,19 +254,19 @@
             <strong>
                 <a href="https://tthleila.github.io/munkaim/" target="_blank">Tóth Leila Anasztázia</a>
                 és
-                <a href="https://szucsdominika.hu" target="_blank">Szűcs Dominika</a>
+                <a href="https://sites.google.com/view/ita-szd10b/projekt" target="_blank">Szűcs Dominika</a>
             </strong>
         </p>
     </footer>
 
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll("header button");
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll("header button");
 
-    buttons.forEach(button => {
-        button.classList.add("hover-effect");
-    });
-});
+            buttons.forEach(button => {
+                button.classList.add("hover-effect");
+            });
+        });
 
         function solveEquation() {
             const a = parseFloat(document.getElementById('a').value);
@@ -263,16 +279,16 @@ document.addEventListener("DOMContentLoaded", function () {
             if (discriminant > 0) {
                 const x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
                 const x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-                resultDiv.innerHTML = `<p>Két különböző valós gyök: x<sub>1</sub> = ${x1.toFixed(2)}, x<sub>2</sub> = ${x2.toFixed(2)}</p>`;
+                resultDiv.innerHTML = <p>Két különböző valós gyök: x<sub>1</sub> = ${x1.toFixed(2)}, x<sub>2</sub> = ${x2.toFixed(2)}</p>;
             } else if (discriminant === 0) {
                 const x = -b / (2 * a);
-                resultDiv.innerHTML = `<p>Egy valós gyök: x = ${x.toFixed(2)}</p>`;
+                resultDiv.innerHTML = <p>Egy valós gyök: x = ${x.toFixed(2)}</p>;
             } else {
                 resultDiv.innerHTML = '<p>Nincs valós gyök (komplex gyökök).</p>';
             }
 
             resultDiv.style.display = 'block';
-            }
+        }
 
     </script>
 </body>
